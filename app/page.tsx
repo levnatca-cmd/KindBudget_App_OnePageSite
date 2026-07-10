@@ -1,0 +1,285 @@
+import { AppStoreBadge, SiteFooter, SiteHeader } from "./site-shell";
+
+const features = [
+  {
+    icon: "↙",
+    title: "Simple expense tracking",
+    text: "Add income and expenses in seconds, with categories that keep everything easy to find.",
+    tone: "mint",
+  },
+  {
+    icon: "▤",
+    title: "Receipt scanning",
+    text: "Scan a receipt and let on-device recognition pull out the store, date and total for you.",
+    tone: "lilac",
+  },
+  {
+    icon: "∞",
+    title: "Shared budgets",
+    text: "Invite a partner or family member and stay aligned without chasing updates.",
+    tone: "peach",
+  },
+  {
+    icon: "⌁",
+    title: "Clear analytics",
+    text: "See where money goes through calm summaries, categories and spending trends.",
+    tone: "sky",
+  },
+  {
+    icon: "✦",
+    title: "Widgets & Siri",
+    text: "Check a budget at a glance and add transactions with less tapping.",
+    tone: "gold",
+  },
+  {
+    icon: "✓",
+    title: "Secure and private",
+    text: "Protected sign-in, scoped cloud access and controls to export or delete your data.",
+    tone: "rose",
+  },
+];
+
+const gallery = [
+  { src: "/screens/daily-check-in.png", label: "Daily check-in", note: "A friendly, 30-second money habit." },
+  { src: "/screens/home-dashboard.png", label: "Home dashboard", note: "See what is left without doing the math." },
+  { src: "/screens/add-transaction.png", label: "Quick note", note: "A focused way to log money in or out." },
+  { src: "/screens/analytics.png", label: "Analytics", note: "Useful patterns without financial noise." },
+  { src: "/screens/day-transactions.png", label: "Day details", note: "Open any day and see exactly what changed." },
+  { src: "/screens/shared-budget.png", label: "Shared budget", note: "One current view for everyone invited." },
+];
+
+const faqs = [
+  {
+    q: "Is KindBudget free?",
+    a: "KindBudget includes a free tier for everyday budgeting. Some higher limits and advanced features are available on paid plans.",
+  },
+  {
+    q: "Do I need an account?",
+    a: "Yes. An account is required so KindBudget can protect your data, sync supported plan data and enable shared budgets. You can sign in with Apple, Google or email.",
+  },
+  {
+    q: "Can I manage a budget with someone else?",
+    a: "Yes. Shared-budget owners can invite a partner or family member. Shared members only see the budgets they have been invited to.",
+  },
+  {
+    q: "Which currencies are supported?",
+    a: "The current release supports USD, CAD, EUR and GBP. Each budget keeps its own currency.",
+  },
+  {
+    q: "Can KindBudget scan receipts?",
+    a: "Yes. The current scanner uses on-device recognition to extract receipt details. Always review the detected amount before saving.",
+  },
+  {
+    q: "Which devices does it work on?",
+    a: "KindBudget is designed for iPhone and requires iOS 18.2 or later. Its widget brings selected budget information to the Home Screen.",
+  },
+  {
+    q: "How do I delete my account and data?",
+    a: "In the app, open Profile and choose Delete My Account. The two-step confirmation permanently removes your account and associated data. Full instructions are available on the Delete Account page.",
+  },
+  {
+    q: "How can I contact support?",
+    a: "Email support@kindbudget.app. Include your iPhone model, iOS version and app version so the team can help faster.",
+  },
+];
+
+function Phone({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+  return (
+    <div className={`phone ${className}`}>
+      <div className="phone__island" aria-hidden="true" />
+      <img src={src} alt={alt} loading="lazy" />
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <section className="hero" id="top">
+          <div className="hero-orb hero-orb--one" aria-hidden="true" />
+          <div className="hero-orb hero-orb--two" aria-hidden="true" />
+          <div className="shell hero-grid">
+            <div className="hero-copy">
+              <span className="eyebrow"><span>●</span> A calmer way to budget</span>
+              <h1>Budgeting that feels <em>kind.</em></h1>
+              <p className="hero-lead">
+                Track spending, scan receipts and manage shared budgets—all in one simple app built to make money feel lighter.
+              </p>
+              <div className="hero-actions">
+                <AppStoreBadge />
+                <a className="text-link" href="#product-tour">See the app <span aria-hidden="true">↓</span></a>
+              </div>
+              <div className="trust-row" aria-label="Product highlights">
+                <span><b>✓</b> On-device receipt OCR</span>
+                <span><b>✓</b> No bank connection needed</span>
+              </div>
+            </div>
+            <div className="hero-visual" aria-label="KindBudget app preview">
+              <div className="hero-note hero-note--left">
+                <span className="note-icon">↗</span>
+                <div><strong>Family budget</strong><small>Up to date for everyone</small></div>
+              </div>
+              <Phone src="/screens/home-dashboard.png" alt="KindBudget home dashboard on iPhone" className="phone--hero" />
+              <div className="hero-note hero-note--right">
+                <span className="note-icon note-icon--peach">✓</span>
+                <div><strong>Receipt added</strong><small>Groceries · $68.40</small></div>
+              </div>
+              <img className="hero-buddy" src="/brand/buddy-peek.png" alt="KindBudget buddy smiling" />
+            </div>
+          </div>
+        </section>
+
+        <section className="soft-proof" aria-label="KindBudget approach">
+          <div className="shell soft-proof__inner">
+            <span>Designed for real life</span>
+            <i aria-hidden="true" />
+            <span>Clear, not complicated</span>
+            <i aria-hidden="true" />
+            <span>Supportive, never judgmental</span>
+          </div>
+        </section>
+
+        <section className="section features" id="features">
+          <div className="shell">
+            <div className="section-heading section-heading--split">
+              <div>
+                <span className="eyebrow">Everything in one place</span>
+                <h2>Small tools. A lighter money routine.</h2>
+              </div>
+              <p>KindBudget keeps the useful parts of budgeting and leaves the spreadsheet stress behind.</p>
+            </div>
+            <div className="feature-grid">
+              {features.map((feature) => (
+                <article className="feature-card" key={feature.title}>
+                  <span className={`feature-icon feature-icon--${feature.tone}`} aria-hidden="true">{feature.icon}</span>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section steps" id="how-it-works">
+          <div className="shell">
+            <div className="section-heading section-heading--center">
+              <span className="eyebrow">How it works</span>
+              <h2>Start simple. Keep going together.</h2>
+              <p>Three small steps are enough to turn everyday spending into a plan you can actually use.</p>
+            </div>
+            <div className="steps-grid">
+              <article className="step-card">
+                <span className="step-number">1</span>
+                <div><strong>Create a budget</strong><p>Choose a name, currency and a goal that fits your life.</p></div>
+                <Phone src="/screens/create-budget.png" alt="Create budget screen in KindBudget" />
+              </article>
+              <article className="step-card step-card--raised">
+                <span className="step-number">2</span>
+                <div><strong>Add as you go</strong><p>Enter an expense by hand or scan the paper receipt.</p></div>
+                <Phone src="/screens/add-transaction.png" alt="Add transaction screen in KindBudget" />
+              </article>
+              <article className="step-card">
+                <span className="step-number">3</span>
+                <div><strong>Notice the pattern</strong><p>Review calm summaries and plan the next step together.</p></div>
+                <Phone src="/screens/analytics.png" alt="Analytics screen in KindBudget" />
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section gallery-section" id="product-tour">
+          <div className="shell">
+            <div className="section-heading section-heading--split">
+              <div>
+                <span className="eyebrow">A closer look</span>
+                <h2>The product does the talking.</h2>
+              </div>
+              <p>Real KindBudget screens, shown with seeded demo data so you can see the full experience without exposing anyone’s finances.</p>
+            </div>
+            <div className="gallery-track" role="list" aria-label="KindBudget product screens">
+              {gallery.map((item, index) => (
+                <article className={`gallery-card gallery-card--${(index % 3) + 1}`} key={item.label} role="listitem">
+                  <div className="gallery-card__copy"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.label}</h3><p>{item.note}</p></div>
+                  <Phone src={item.src} alt={`${item.label} in KindBudget`} />
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section together">
+          <div className="shell together-card">
+            <div className="together-art" aria-hidden="true">
+              <div className="avatar avatar--one">M</div>
+              <div className="share-line" />
+              <div className="avatar avatar--two">A</div>
+              <div className="shared-total"><small>Family plan</small><strong>$3,240 left</strong><span><i /> 62% on track</span></div>
+            </div>
+            <div className="together-copy">
+              <span className="eyebrow eyebrow--light">Shared budgets</span>
+              <h2>Better budgets, together.</h2>
+              <p>Invite a partner or family member, add expenses from either phone and work from the same current view.</p>
+              <ul>
+                <li><span>✓</span> Shared data stays inside the budget you invite them to</li>
+                <li><span>✓</span> Owners can manage members and remove access</li>
+                <li><span>✓</span> Clear roles help everyone know what they can change</li>
+              </ul>
+              <a href="#faq" className="light-link">Questions about sharing? <span>→</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section className="section privacy-callout">
+          <div className="shell privacy-grid">
+            <div className="privacy-copy">
+              <span className="eyebrow">Privacy, in plain language</span>
+              <h2>Your money story is yours.</h2>
+              <p>KindBudget uses the data you enter to provide budgeting, sync and sharing features. It does not sell, rent or trade your personal data.</p>
+              <a className="text-link" href="/privacy">Read the Privacy Policy <span>→</span></a>
+            </div>
+            <div className="privacy-points">
+              <div><span>01</span><strong>Receipt images stay local</strong><p>In the current release, images are processed on-device and are not uploaded to cloud storage.</p></div>
+              <div><span>02</span><strong>Protected account access</strong><p>Firebase Authentication and scoped Firestore rules protect signed-in data access.</p></div>
+              <div><span>03</span><strong>You stay in control</strong><p>Export supported budget data, remove shared access, or delete your account from the app.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section faq" id="faq">
+          <div className="shell faq-grid">
+            <div className="faq-intro">
+              <span className="eyebrow">FAQ</span>
+              <h2>A few useful answers.</h2>
+              <p>Still unsure about something? We are happy to help.</p>
+              <a className="support-chip" href="mailto:support@kindbudget.app"><span>✉</span> support@kindbudget.app</a>
+              <img src="/brand/buddy-pointing.png" alt="KindBudget buddy pointing toward the questions" />
+            </div>
+            <div className="faq-list">
+              {faqs.map((faq, index) => (
+                <details key={faq.q} open={index === 0}>
+                  <summary>{faq.q}<span aria-hidden="true">+</span></summary>
+                  <p>{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="final-cta">
+          <div className="shell final-cta__inner">
+            <div className="cta-orbit cta-orbit--one" aria-hidden="true" />
+            <div className="cta-orbit cta-orbit--two" aria-hidden="true" />
+            <span className="eyebrow eyebrow--light">A kinder money habit</span>
+            <h2>Make money management feel lighter.</h2>
+            <p>Start building better financial habits with KindBudget.</p>
+            <AppStoreBadge />
+            <small>Join the waitlist. We will only email you about KindBudget availability.</small>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}

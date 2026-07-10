@@ -134,7 +134,7 @@ export default function Home() {
                 <div><strong>12-day streak</strong><small>A habit that feels possible</small></div>
               </div>
               <Phone src="/screens/daily-check-in.webp" alt="KindBudget welcome page on iPhone" className="phone--hero phone--hero-primary" eager />
-              <Phone src="/screens/receipt-camera.webp" alt="KindBudget receipt camera on iPhone" className="phone--hero-secondary" />
+              <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget receipt camera scanning a sample Costco receipt on iPhone" className="phone--hero-secondary" />
               <div className="hero-note hero-note--right">
                 <span className="note-icon note-icon--peach">▤</span>
                 <div><strong>Receipt ready</strong><small>Review before saving</small></div>
@@ -191,7 +191,7 @@ export default function Home() {
               <article className="step-card step-card--raised">
                 <span className="step-number">2</span>
                 <div><strong>Add as you go</strong><p>Enter an expense by hand or scan the paper receipt.</p></div>
-                <Phone src="/screens/receipt-camera.webp" alt="KindBudget camera scanning a sample paper receipt" />
+                <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget camera scanning a sample Costco receipt" />
               </article>
               <article className="step-card">
                 <span className="step-number">3</span>
@@ -235,8 +235,8 @@ export default function Home() {
                     <span>On-device OCR</span><span>Review first</span><span>Images stay local</span>
                   </div>
                 </div>
-                <Phone src="/screens/receipt-camera.webp" alt="KindBudget camera digitising a sample receipt" className="phone--signature" />
-                <div className="scan-status"><i /> Receipt in frame</div>
+                <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget camera digitising a sample Costco receipt" className="phone--signature" />
+                <div className="scan-status"><i /> Costco receipt in frame</div>
               </article>
             </div>
 

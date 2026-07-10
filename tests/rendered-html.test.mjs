@@ -68,13 +68,13 @@ test("keeps privacy and deletion claims aligned with the current app policy", as
 
 test("ships every product image and responsive accessibility safeguard", async () => {
   const imageNames = [
-    "add-transaction.png",
-    "analytics.png",
-    "create-budget.png",
-    "daily-check-in.png",
-    "day-transactions.png",
-    "home-dashboard.png",
-    "shared-budget.png",
+    "add-transaction.webp",
+    "analytics.webp",
+    "create-budget.webp",
+    "daily-check-in.webp",
+    "day-transactions.webp",
+    "home-dashboard.webp",
+    "shared-budget.webp",
   ];
 
   for (const imageName of imageNames) {

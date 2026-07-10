@@ -40,12 +40,12 @@ const features = [
 ];
 
 const gallery = [
-  { src: "/screens/daily-check-in.png", label: "Daily check-in", note: "A friendly, 30-second money habit." },
-  { src: "/screens/home-dashboard.png", label: "Home dashboard", note: "See what is left without doing the math." },
-  { src: "/screens/add-transaction.png", label: "Quick note", note: "A focused way to log money in or out." },
-  { src: "/screens/analytics.png", label: "Analytics", note: "Useful patterns without financial noise." },
-  { src: "/screens/day-transactions.png", label: "Day details", note: "Open any day and see exactly what changed." },
-  { src: "/screens/shared-budget.png", label: "Shared budget", note: "One current view for everyone invited." },
+  { src: "/screens/daily-check-in.webp", label: "Daily check-in", note: "A friendly, 30-second money habit." },
+  { src: "/screens/home-dashboard.webp", label: "Home dashboard", note: "See what is left without doing the math." },
+  { src: "/screens/add-transaction.webp", label: "Quick note", note: "A focused way to log money in or out." },
+  { src: "/screens/analytics.webp", label: "Analytics", note: "Useful patterns without financial noise." },
+  { src: "/screens/day-transactions.webp", label: "Day details", note: "Open any day and see exactly what changed." },
+  { src: "/screens/shared-budget.webp", label: "Shared budget", note: "One current view for everyone invited." },
 ];
 
 const faqs = [
@@ -121,7 +121,7 @@ export default function Home() {
                 <span className="note-icon">↗</span>
                 <div><strong>Family budget</strong><small>Up to date for everyone</small></div>
               </div>
-              <Phone src="/screens/home-dashboard.png" alt="KindBudget home dashboard on iPhone" className="phone--hero" />
+              <Phone src="/screens/home-dashboard.webp" alt="KindBudget home dashboard on iPhone" className="phone--hero" />
               <div className="hero-note hero-note--right">
                 <span className="note-icon note-icon--peach">✓</span>
                 <div><strong>Receipt added</strong><small>Groceries · $68.40</small></div>
@@ -173,17 +173,17 @@ export default function Home() {
               <article className="step-card">
                 <span className="step-number">1</span>
                 <div><strong>Create a budget</strong><p>Choose a name, currency and a goal that fits your life.</p></div>
-                <Phone src="/screens/create-budget.png" alt="Create budget screen in KindBudget" />
+                <Phone src="/screens/create-budget.webp" alt="Create budget screen in KindBudget" />
               </article>
               <article className="step-card step-card--raised">
                 <span className="step-number">2</span>
                 <div><strong>Add as you go</strong><p>Enter an expense by hand or scan the paper receipt.</p></div>
-                <Phone src="/screens/add-transaction.png" alt="Add transaction screen in KindBudget" />
+                <Phone src="/screens/add-transaction.webp" alt="Add transaction screen in KindBudget" />
               </article>
               <article className="step-card">
                 <span className="step-number">3</span>
                 <div><strong>Notice the pattern</strong><p>Review calm summaries and plan the next step together.</p></div>
-                <Phone src="/screens/analytics.png" alt="Analytics screen in KindBudget" />
+                <Phone src="/screens/analytics.webp" alt="Analytics screen in KindBudget" />
               </article>
             </div>
           </div>

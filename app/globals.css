@@ -827,6 +827,12 @@ summary {
   transform: translateY(-8px);
 }
 
+@media (min-width: 901px) {
+  .gallery-card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+}
+
 /* Together */
 
 .together {

@@ -32,6 +32,8 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /<title>KindBudget — Budgeting that feels kind<\/title>/i);
   assert.match(html, /Budgeting that feels/);
   assert.match(html, /Better budgets, together/);
+  assert.match(html, /Receipt tools/);
+  assert.match(html, /Category picker/);
   assert.match(html, /Privacy, in plain language/);
   assert.match(html, /USD, CAD, EUR and GBP/);
   assert.match(html, /support@kindbudget\.app/);
@@ -70,10 +72,14 @@ test("ships every product image and responsive accessibility safeguard", async (
   const imageNames = [
     "add-transaction.webp",
     "analytics.webp",
+    "category-picker.webp",
+    "create-budget-form.webp",
     "create-budget.webp",
     "daily-check-in.webp",
     "day-transactions.webp",
     "home-dashboard.webp",
+    "profile.webp",
+    "receipt-options.webp",
     "shared-budget.webp",
   ];
 

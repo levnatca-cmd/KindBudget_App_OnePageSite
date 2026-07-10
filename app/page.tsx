@@ -43,9 +43,13 @@ const gallery = [
   { src: "/screens/daily-check-in.webp", label: "Daily check-in", note: "A friendly, 30-second money habit." },
   { src: "/screens/home-dashboard.webp", label: "Home dashboard", note: "See what is left without doing the math." },
   { src: "/screens/add-transaction.webp", label: "Quick note", note: "A focused way to log money in or out." },
+  { src: "/screens/category-picker.webp", label: "Category picker", note: "Keep every expense organised with a quick, visual choice." },
+  { src: "/screens/receipt-options.webp", label: "Receipt tools", note: "Scan with the camera or import a receipt you already have." },
   { src: "/screens/analytics.webp", label: "Analytics", note: "Useful patterns without financial noise." },
   { src: "/screens/day-transactions.webp", label: "Day details", note: "Open any day and see exactly what changed." },
   { src: "/screens/shared-budget.webp", label: "Shared budget", note: "One current view for everyone invited." },
+  { src: "/screens/create-budget-form.webp", label: "Create a budget", note: "Set the currency, goal and shape of a new budget in one place." },
+  { src: "/screens/profile.webp", label: "Your profile", note: "Account, locale and privacy controls stay easy to find." },
 ];
 
 const faqs = [

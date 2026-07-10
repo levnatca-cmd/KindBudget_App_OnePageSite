@@ -40,8 +40,6 @@ const features = [
 ];
 
 const gallery = [
-  { src: "/screens/daily-check-in.webp", label: "Welcome page", note: "A friendly home for the daily check-in, streak and next small step." },
-  { src: "/screens/receipt-camera.webp", label: "Camera receipt scan", note: "Aim at a paper receipt and let KindBudget prepare it for digitisation." },
   { src: "/screens/home-dashboard.webp", label: "Home dashboard", note: "See what is left without doing the math." },
   { src: "/screens/add-transaction.webp", label: "Quick note", note: "A focused way to log money in or out." },
   { src: "/screens/category-picker.webp", label: "Category picker", note: "Keep every expense organised with a quick, visual choice." },
@@ -88,11 +86,11 @@ const faqs = [
   },
 ];
 
-function Phone({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+function Phone({ src, alt, className = "", eager = false }: { src: string; alt: string; className?: string; eager?: boolean }) {
   return (
     <div className={`phone ${className}`}>
       <div className="phone__island" aria-hidden="true" />
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} />
     </div>
   );
 }
@@ -107,7 +105,10 @@ export default function Home() {
           <div className="hero-orb hero-orb--two" aria-hidden="true" />
           <div className="shell hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow"><span>●</span> A calmer way to budget</span>
+              <div className="hero-status-row">
+                <span className="eyebrow"><span>●</span> A calmer way to budget</span>
+                <span className="hero-availability"><i /> Built for iPhone</span>
+              </div>
               <h1>Budgeting that feels <em>kind.</em></h1>
               <p className="hero-lead">
                 Track spending, scan receipts and manage shared budgets—all in one simple app built to make money feel lighter.
@@ -120,16 +121,23 @@ export default function Home() {
                 <span><b>✓</b> On-device receipt OCR</span>
                 <span><b>✓</b> No bank connection needed</span>
               </div>
+              <div className="hero-metrics" aria-label="KindBudget highlights">
+                <div><strong>30 sec</strong><span>daily check-in</span></div>
+                <div><strong>1 scan</strong><span>to digitise a receipt</span></div>
+                <div><strong>Together</strong><span>shared family budgets</span></div>
+              </div>
             </div>
             <div className="hero-visual" aria-label="KindBudget app preview">
+              <span className="hero-stage-label">The calmer money app</span>
               <div className="hero-note hero-note--left">
-                <span className="note-icon">↗</span>
-                <div><strong>Family budget</strong><small>Up to date for everyone</small></div>
+                <span className="note-icon">✓</span>
+                <div><strong>12-day streak</strong><small>A habit that feels possible</small></div>
               </div>
-              <Phone src="/screens/home-dashboard.webp" alt="KindBudget home dashboard on iPhone" className="phone--hero" />
+              <Phone src="/screens/daily-check-in.webp" alt="KindBudget welcome page on iPhone" className="phone--hero phone--hero-primary" eager />
+              <Phone src="/screens/receipt-camera.webp" alt="KindBudget receipt camera on iPhone" className="phone--hero-secondary" />
               <div className="hero-note hero-note--right">
-                <span className="note-icon note-icon--peach">✓</span>
-                <div><strong>Receipt added</strong><small>Groceries · $68.40</small></div>
+                <span className="note-icon note-icon--peach">▤</span>
+                <div><strong>Receipt ready</strong><small>Review before saving</small></div>
               </div>
               <img className="hero-buddy" src="/brand/buddy-peek.png" alt="KindBudget buddy smiling" />
             </div>
@@ -198,10 +206,43 @@ export default function Home() {
           <div className="shell">
             <div className="section-heading section-heading--split">
               <div>
-                <span className="eyebrow">A closer look</span>
-                <h2>The product does the talking.</h2>
+                <span className="eyebrow">The KindBudget experience</span>
+                <h2>Designed to feel good every day.</h2>
               </div>
-              <p>Real KindBudget screens, shown with seeded demo data so you can see the full experience without exposing anyone’s finances.</p>
+              <p>Real KindBudget screens with seeded demo data—so the product can speak for itself without exposing anyone’s finances.</p>
+            </div>
+
+            <div className="signature-showcase" role="list" aria-label="KindBudget signature screens">
+              <article className="signature-card signature-card--welcome" role="listitem">
+                <div className="signature-copy">
+                  <span className="signature-index">01 · Welcome</span>
+                  <h3>A money habit you will want to return to.</h3>
+                  <p>A warm daily check-in, a visible streak and one clear next step—without shame, alarms or financial noise.</p>
+                  <div className="signature-tags" aria-label="Welcome page highlights">
+                    <span>30-second check-in</span><span>Gentle streaks</span><span>Your buddy</span>
+                  </div>
+                </div>
+                <Phone src="/screens/daily-check-in.webp" alt="KindBudget welcome page with daily check-in and buddy" className="phone--signature" />
+                <img className="signature-buddy" src="/brand/buddy-peek.png" alt="" />
+              </article>
+
+              <article className="signature-card signature-card--camera" role="listitem">
+                <div className="signature-copy">
+                  <span className="signature-index">02 · Receipt camera</span>
+                  <h3>Paper receipt in. Clear transaction out.</h3>
+                  <p>Aim, capture and review. KindBudget reads receipt details on-device and keeps you in control before anything is saved.</p>
+                  <div className="signature-tags" aria-label="Receipt camera highlights">
+                    <span>On-device OCR</span><span>Review first</span><span>Images stay local</span>
+                  </div>
+                </div>
+                <Phone src="/screens/receipt-camera.webp" alt="KindBudget camera digitising a sample receipt" className="phone--signature" />
+                <div className="scan-status"><i /> Receipt in frame</div>
+              </article>
+            </div>
+
+            <div className="gallery-subheading">
+              <div><span>More of the product</span><h3>Everyday tools, beautifully simple.</h3></div>
+              <p>Nine more real screens—from quick notes to shared budgets and analytics.</p>
             </div>
             <div className="gallery-track" role="list" aria-label="KindBudget product screens">
               {gallery.map((item, index) => (

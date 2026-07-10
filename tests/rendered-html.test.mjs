@@ -32,8 +32,10 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /<title>KindBudget — Budgeting that feels kind<\/title>/i);
   assert.match(html, /Budgeting that feels/);
   assert.match(html, /Better budgets, together/);
-  assert.match(html, /Welcome page/);
-  assert.match(html, /Camera receipt scan/);
+  assert.match(html, /Designed to feel good every day/);
+  assert.match(html, /A money habit you will want to return to/);
+  assert.match(html, /Paper receipt in\. Clear transaction out/);
+  assert.match(html, /30 sec/);
   assert.match(html, /Receipt tools/);
   assert.match(html, /Category picker/);
   assert.match(html, /Privacy, in plain language/);
@@ -94,6 +96,9 @@ test("ships every product image and responsive accessibility safeguard", async (
   assert.match(css, /@media \(max-width: 640px\)/);
   assert.match(css, /@media \(max-width: 900px\)/);
   assert.match(css, /prefers-reduced-motion: reduce/);
+  assert.match(css, /\.signature-showcase/);
+  assert.match(css, /\.hero-metrics/);
+  assert.match(css, /animation-duration: 0\.01ms/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /grid-template-columns: 1fr/);
 });

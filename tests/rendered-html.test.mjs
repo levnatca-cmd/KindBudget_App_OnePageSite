@@ -38,6 +38,11 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /30 sec/);
   assert.match(html, /Costco receipt in frame/);
   assert.match(html, /receipt-camera-costco\.webp/);
+  assert.match(html, /See exactly what KindBudget detects/);
+  assert.match(html, /On-device OCR/);
+  assert.match(html, /Review output/);
+  assert.match(html, /Costco Wholesale/);
+  assert.match(html, /\$57\.02 CAD/);
   assert.match(html, /Receipt tools/);
   assert.match(html, /Category picker/);
   assert.match(html, /Privacy, in plain language/);
@@ -101,6 +106,8 @@ test("ships every product image and responsive accessibility safeguard", async (
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /\.signature-showcase/);
   assert.match(css, /\.hero-metrics/);
+  assert.match(css, /\.receipt-journey/);
+  assert.match(css, /\.phone--review/);
   assert.match(css, /animation-duration: 0\.01ms/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /grid-template-columns: 1fr/);

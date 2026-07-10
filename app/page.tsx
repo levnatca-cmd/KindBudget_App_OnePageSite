@@ -95,6 +95,52 @@ function Phone({ src, alt, className = "", eager = false }: { src: string; alt: 
   );
 }
 
+const costcoDetectedItems = [
+  ["KS Paper Towels", "$19.99"],
+  ["Organic Eggs", "$12.49"],
+  ["Avocados", "$9.99"],
+  ["Rotisserie Chicken", "$7.99"],
+];
+
+function ReceiptReviewPhone() {
+  return (
+    <div
+      className="phone phone--review"
+      role="img"
+      aria-label="KindBudget review screen showing Costco Wholesale, four detected items, tax and a total of 57 dollars and 2 cents"
+    >
+      <div className="phone__island" aria-hidden="true" />
+      <div className="receipt-review-screen">
+        <div className="review-status"><span>1:42</span><span>● ◔ ▰</span></div>
+        <div className="review-nav"><span>‹</span><strong>Review receipt</strong><span>•••</span></div>
+        <div className="review-content">
+          <span className="review-label">Store name</span>
+          <div className="review-store">Costco Wholesale <span>✎</span></div>
+          <div className="review-date">July 10, 2026 <span>✎</span></div>
+
+          <div className="review-items">
+            <span className="review-label">Found 4 items</span>
+            {costcoDetectedItems.map(([name, price]) => (
+              <div key={name}><span>{name}</span><strong>{price}</strong></div>
+            ))}
+          </div>
+
+          <div className="review-totals">
+            <div><span>Before tax</span><strong>$50.46</strong></div>
+            <div><span>Tax</span><strong>$6.56</strong></div>
+            <div className="review-total"><span>You spent</span><strong>$57.02</strong><i>✎</i></div>
+          </div>
+
+          <div className="review-confidence"><i>✓</i><span><strong>High confidence</strong><small>Review before saving</small></span></div>
+          <div className="review-type"><strong>Expense</strong><span>Income</span></div>
+          <div className="review-category"><span>Suggested category</span><strong>🛒 Groceries</strong></div>
+          <div className="review-save">＋ Add From Scan</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -239,6 +285,50 @@ export default function Home() {
                 <div className="scan-status"><i /> Costco receipt in frame</div>
               </article>
             </div>
+
+            <article className="receipt-journey" aria-labelledby="receipt-journey-title">
+              <div className="receipt-journey__heading">
+                <span className="signature-index">Receipt intelligence</span>
+                <h3 id="receipt-journey-title">See exactly what KindBudget detects.</h3>
+                <p>The scan becomes a draft—not a decision. Check every field, adjust anything, then add the transaction when it looks right.</p>
+              </div>
+
+              <div className="receipt-journey__flow" aria-label="Receipt scanning flow">
+                <div className="journey-phone journey-phone--capture">
+                  <span className="journey-step"><b>1</b> Capture</span>
+                  <Phone src="/screens/receipt-camera-costco.webp" alt="Sample Costco receipt framed in the KindBudget camera" />
+                </div>
+
+                <div className="journey-detected">
+                  <span className="journey-step"><b>2</b> On-device OCR</span>
+                  <div className="detected-card">
+                    <div className="detected-card__top"><span>Sample detection</span><strong>High</strong></div>
+                    <dl>
+                      <div><dt>Merchant</dt><dd>Costco Wholesale</dd></div>
+                      <div><dt>Date</dt><dd>Jul 10, 2026</dd></div>
+                      <div><dt>Items</dt><dd>4 line items</dd></div>
+                      <div><dt>Subtotal</dt><dd>$50.46</dd></div>
+                      <div><dt>Tax</dt><dd>$6.56</dd></div>
+                      <div className="detected-total"><dt>Total</dt><dd>$57.02 CAD</dd></div>
+                    </dl>
+                    <div className="detected-pulse"><i /> Ready to review</div>
+                  </div>
+                </div>
+
+                <div className="journey-phone journey-phone--review">
+                  <span className="journey-step"><b>3</b> Review output</span>
+                  <ReceiptReviewPhone />
+                </div>
+              </div>
+
+              <div className="receipt-output-strip">
+                <span><i>✓</i> Final draft</span>
+                <strong>Costco Wholesale</strong>
+                <span>Expense · Groceries</span>
+                <b>$57.02 CAD</b>
+                <small>Nothing is saved until you confirm.</small>
+              </div>
+            </article>
 
             <div className="gallery-subheading">
               <div><span>More of the product</span><h3>Everyday tools, beautifully simple.</h3></div>

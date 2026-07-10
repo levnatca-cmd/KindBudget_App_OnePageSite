@@ -40,7 +40,8 @@ const features = [
 ];
 
 const gallery = [
-  { src: "/screens/daily-check-in.webp", label: "Daily check-in", note: "A friendly, 30-second money habit." },
+  { src: "/screens/daily-check-in.webp", label: "Welcome page", note: "A friendly home for the daily check-in, streak and next small step." },
+  { src: "/screens/receipt-camera.webp", label: "Camera receipt scan", note: "Aim at a paper receipt and let KindBudget prepare it for digitisation." },
   { src: "/screens/home-dashboard.webp", label: "Home dashboard", note: "See what is left without doing the math." },
   { src: "/screens/add-transaction.webp", label: "Quick note", note: "A focused way to log money in or out." },
   { src: "/screens/category-picker.webp", label: "Category picker", note: "Keep every expense organised with a quick, visual choice." },
@@ -182,7 +183,7 @@ export default function Home() {
               <article className="step-card step-card--raised">
                 <span className="step-number">2</span>
                 <div><strong>Add as you go</strong><p>Enter an expense by hand or scan the paper receipt.</p></div>
-                <Phone src="/screens/add-transaction.webp" alt="Add transaction screen in KindBudget" />
+                <Phone src="/screens/receipt-camera.webp" alt="KindBudget camera scanning a sample paper receipt" />
               </article>
               <article className="step-card">
                 <span className="step-number">3</span>

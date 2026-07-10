@@ -32,6 +32,8 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /<title>KindBudget — Budgeting that feels kind<\/title>/i);
   assert.match(html, /Budgeting that feels/);
   assert.match(html, /Better budgets, together/);
+  assert.match(html, /Welcome page/);
+  assert.match(html, /Camera receipt scan/);
   assert.match(html, /Receipt tools/);
   assert.match(html, /Category picker/);
   assert.match(html, /Privacy, in plain language/);
@@ -79,6 +81,7 @@ test("ships every product image and responsive accessibility safeguard", async (
     "day-transactions.webp",
     "home-dashboard.webp",
     "profile.webp",
+    "receipt-camera.webp",
     "receipt-options.webp",
     "shared-budget.webp",
   ];

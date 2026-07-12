@@ -33,14 +33,14 @@ These commands verify both the production worker and the static GitHub Pages exp
 
 ## Deployment
 
-GitHub Pages publishes the generated `docs` directory from `main` to [kindbudget.ca](https://kindbudget.ca). Before publishing a site change, run:
+GitHub Pages publishes the generated static files from the root of `main` to [kindbudget.ca](https://kindbudget.ca). Before publishing a site change, run:
 
 ```bash
 npm run test:pages
-git add docs
+git add -A
 ```
 
-The preparation script creates the static export, copies it to `docs`, preserves the custom domain, and disables Jekyll so Next.js `_next` assets remain available. In **Settings → Pages**, the publishing source must be `main` and `/docs`.
+The preparation script creates the static export, safely replaces only its generated root entries, preserves the custom domain, and disables Jekyll so Next.js `_next` assets remain available. In **Settings → Pages**, the publishing source stays `main` and `/(root)`.
 
 ## Content notes
 

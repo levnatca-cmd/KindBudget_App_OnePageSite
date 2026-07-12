@@ -26,9 +26,21 @@ npm run dev
 
 ```bash
 npm test
+npm run test:pages
 ```
 
-This builds the production worker and verifies the main page, required routes, legal copy safeguards, product images and responsive accessibility rules.
+These commands verify both the production worker and the static GitHub Pages export, including the main page, required routes, legal copy safeguards, product images and responsive accessibility rules.
+
+## Deployment
+
+GitHub Pages publishes the generated `docs` directory from `main` to [kindbudget.ca](https://kindbudget.ca). Before publishing a site change, run:
+
+```bash
+npm run test:pages
+git add docs
+```
+
+The preparation script creates the static export, copies it to `docs`, preserves the custom domain, and disables Jekyll so Next.js `_next` assets remain available. In **Settings → Pages**, the publishing source must be `main` and `/docs`.
 
 ## Content notes
 

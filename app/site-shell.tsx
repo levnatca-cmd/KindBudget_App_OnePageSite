@@ -32,9 +32,9 @@ export function SiteHeader({ simple = false }: { simple?: boolean }) {
         <Brand />
         {!simple && (
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href="/#features">Features</a>
-            <a href="/#how-it-works">How it works</a>
-            <a href="/#faq">FAQ</a>
+            <Link href="/#features">Features</Link>
+            <Link href="/#how-it-works">How it works</Link>
+            <Link href="/#faq">FAQ</Link>
           </nav>
         )}
         <div className="header-actions">
@@ -64,9 +64,9 @@ export function SiteFooter() {
         <nav className="footer-links" aria-label="Legal and support">
           <div>
             <strong>Product</strong>
-            <a href="/#features">Features</a>
-            <a href="/#how-it-works">How it works</a>
-            <a href="/#faq">FAQ</a>
+            <Link href="/#features">Features</Link>
+            <Link href="/#how-it-works">How it works</Link>
+            <Link href="/#faq">FAQ</Link>
           </div>
           <div>
             <strong>Help & legal</strong>

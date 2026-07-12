@@ -4,6 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Delete Account",
   description: "How to permanently delete your KindBudget account and associated data.",
+  alternates: { canonical: "/delete-account/" },
 };
 
 export default function DeleteAccountPage() {

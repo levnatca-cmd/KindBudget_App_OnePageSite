@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kindbudget.app"),
+  metadataBase: new URL("https://kindbudget.ca"),
   title: {
     default: "KindBudget — Budgeting that feels kind",
     template: "%s · KindBudget",
   },
   description:
     "Track spending, scan receipts and manage shared budgets in one calm, simple iPhone app.",
+  alternates: {
+    canonical: "/",
+  },
   applicationName: "KindBudget",
   keywords: ["budget app", "expense tracker", "shared budget", "receipt scanner", "iPhone budget"],
   icons: {

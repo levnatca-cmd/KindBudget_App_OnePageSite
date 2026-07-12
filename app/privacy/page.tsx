@@ -4,6 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How KindBudget collects, uses, stores and protects your information.",
+  alternates: { canonical: "/privacy/" },
 };
 
 export default function PrivacyPage() {

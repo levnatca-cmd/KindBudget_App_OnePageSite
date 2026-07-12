@@ -4,6 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "The terms that apply when you use KindBudget.",
+  alternates: { canonical: "/terms/" },
 };
 
 export default function TermsPage() {

@@ -4,6 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Support",
   description: "Get help with KindBudget, receipt scanning, syncing, shared budgets and your account.",
+  alternates: { canonical: "/support/" },
 };
 
 export default function SupportPage() {

@@ -501,6 +501,10 @@ summary {
   object-fit: cover;
 }
 
+.phone--receipt-camera img {
+  aspect-ratio: 852 / 1847;
+}
+
 .phone__island {
   position: absolute;
   z-index: 2;
@@ -769,6 +773,11 @@ summary {
   width: 224px;
   margin: auto auto -105px;
   transform: translateY(10px);
+}
+
+.step-card .phone--receipt-camera {
+  margin-bottom: 32px;
+  transform: none;
 }
 
 /* Gallery */
@@ -1858,6 +1867,12 @@ summary {
   width: 250px;
   transform: rotate(3deg);
   transition: transform 300ms ease;
+}
+
+.signature-card--camera .phone--signature.phone--receipt-camera {
+  right: 30px;
+  bottom: 18px;
+  width: 210px;
 }
 
 .signature-card--welcome .phone--signature {
@@ -2976,6 +2991,17 @@ summary {
     bottom: -150px;
     width: 218px;
     transform: translateX(50%) rotate(0);
+  }
+
+  .signature-card--camera .phone--signature.phone--receipt-camera {
+    right: 50%;
+    bottom: 18px;
+    width: 210px;
+    transform: translateX(50%);
+  }
+
+  .signature-card--camera:hover .phone--signature.phone--receipt-camera {
+    transform: translateX(50%) translateY(-6px);
   }
 
   .signature-card:hover .phone--signature,

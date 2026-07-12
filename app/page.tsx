@@ -180,10 +180,10 @@ export default function Home() {
                 <div><strong>12-day streak</strong><small>A habit that feels possible</small></div>
               </div>
               <Phone src="/screens/daily-check-in.webp" alt="KindBudget welcome page on iPhone" className="phone--hero phone--hero-primary" eager />
-              <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget receipt camera scanning a sample Costco receipt on iPhone" className="phone--hero-secondary" />
+              <Phone src="/screens/receipt-camera-premium.webp" alt="KindBudget premium receipt camera showing an illustrative Costco sample on iPhone" className="phone--hero-secondary phone--receipt-camera" eager />
               <div className="hero-note hero-note--right">
                 <span className="note-icon note-icon--peach">▤</span>
-                <div><strong>Receipt ready</strong><small>Review before saving</small></div>
+                <div><strong>Receipt in frame</strong><small>Capture for review</small></div>
               </div>
               <img className="hero-buddy" src="/brand/buddy-peek.png" alt="KindBudget buddy smiling" />
             </div>
@@ -237,7 +237,7 @@ export default function Home() {
               <article className="step-card step-card--raised">
                 <span className="step-number">2</span>
                 <div><strong>Add as you go</strong><p>Enter an expense by hand or scan the paper receipt.</p></div>
-                <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget camera scanning a sample Costco receipt" />
+                <Phone src="/screens/receipt-camera-premium.webp" alt="KindBudget premium camera framing an illustrative Costco receipt" className="phone--receipt-camera" />
               </article>
               <article className="step-card">
                 <span className="step-number">3</span>
@@ -255,7 +255,7 @@ export default function Home() {
                 <span className="eyebrow">The KindBudget experience</span>
                 <h2>Designed to feel good every day.</h2>
               </div>
-              <p>Real KindBudget screens with seeded demo data—so the product can speak for itself without exposing anyone’s finances.</p>
+              <p>KindBudget product previews with seeded demo data—so the experience can speak for itself without exposing anyone’s finances.</p>
             </div>
 
             <div className="signature-showcase" role="list" aria-label="KindBudget signature screens">
@@ -281,8 +281,7 @@ export default function Home() {
                     <span>On-device OCR</span><span>Review first</span><span>Images stay local</span>
                   </div>
                 </div>
-                <Phone src="/screens/receipt-camera-costco.webp" alt="KindBudget camera digitising a sample Costco receipt" className="phone--signature" />
-                <div className="scan-status"><i /> Costco receipt in frame</div>
+                <Phone src="/screens/receipt-camera-premium.webp" alt="KindBudget premium camera digitising an illustrative Costco receipt" className="phone--signature phone--receipt-camera" />
               </article>
             </div>
 
@@ -296,7 +295,7 @@ export default function Home() {
               <div className="receipt-journey__flow" aria-label="Receipt scanning flow">
                 <div className="journey-phone journey-phone--capture">
                   <span className="journey-step"><b>1</b> Capture</span>
-                  <Phone src="/screens/receipt-camera-costco.webp" alt="Sample Costco receipt framed in the KindBudget camera" />
+                  <Phone src="/screens/receipt-camera-premium.webp" alt="Illustrative Costco receipt framed in the premium KindBudget camera" className="phone--receipt-camera" />
                 </div>
 
                 <div className="journey-detected">

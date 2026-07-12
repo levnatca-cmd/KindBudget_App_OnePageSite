@@ -36,8 +36,9 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /A money habit you will want to return to/);
   assert.match(html, /Paper receipt in\. Clear transaction out/);
   assert.match(html, /30 sec/);
-  assert.match(html, /Costco receipt in frame/);
-  assert.match(html, /receipt-camera-costco\.webp/);
+  assert.match(html, /Capture for review/);
+  assert.match(html, /receipt-camera-premium\.webp/);
+  assert.doesNotMatch(html, /receipt-camera-costco\.webp/);
   assert.match(html, /See exactly what KindBudget detects/);
   assert.match(html, /On-device OCR/);
   assert.match(html, /Review output/);
@@ -91,7 +92,7 @@ test("ships every product image and responsive accessibility safeguard", async (
     "home-dashboard.webp",
     "profile.webp",
     "receipt-camera.webp",
-    "receipt-camera-costco.webp",
+    "receipt-camera-premium.webp",
     "receipt-options.webp",
     "shared-budget.webp",
   ];

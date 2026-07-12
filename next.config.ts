@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const isGitHubPagesBuild = process.env.GITHUB_PAGES_BUILD === "true";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    globalNotFound: true,
+  },
   ...(isGitHubPagesBuild
     ? {
         output: "export" as const,

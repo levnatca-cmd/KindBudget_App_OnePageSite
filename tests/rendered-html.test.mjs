@@ -33,7 +33,7 @@ test("renders the KindBudget product landing page", async () => {
   assert.match(html, /Budgeting that feels/);
   assert.match(html, /Better budgets, together/);
   assert.match(html, /Designed to feel good every day/);
-  assert.match(html, /A money habit you will want to return to/);
+  assert.match(html, /A money habit designed to be easy to return to/);
   assert.match(html, /Paper receipt in\. Clear transaction out/);
   assert.match(html, /30 sec/);
   assert.match(html, /Capture for review/);
@@ -58,14 +58,83 @@ test("renders required App Store support and legal routes", async () => {
     ["/privacy", /Privacy should feel clear/],
     ["/terms", /Simple terms for a simple budgeting app/],
     ["/support", /A little help, without the runaround/],
-    ["/delete-account", /You can leave—and take your data with you/],
+    ["/delete-account", /You can delete your account and associated data/],
     ["/404", /Nothing stressful here/],
+    ["/ru/privacy", /Конфиденциальность тоже должна быть понятной/],
+    ["/ru/terms", /Понятные условия для простого приложения/],
+    ["/ru/support", /Помощь без лишних сложностей/],
+    ["/ru/delete-account", /Вы можете удалить аккаунт и связанные с ним данные/],
+    ["/ru/404", /Ничего страшного/],
+    ["/he/privacy", /גם פרטיות צריכה להיות ברורה/],
+    ["/he/terms", /תנאים פשוטים לאפליקציה פשוטה לניהול תקציב/],
+    ["/he/support", /קצת עזרה/],
+    ["/he/delete-account", /אפשר למחוק את החשבון ואת הנתונים המשויכים אליו/],
+    ["/he/404", /אין כאן שום/],
   ];
 
   for (const [path, expected] of routes) {
     const response = await render(path);
     assert.equal(response.status, 200, `${path} should render`);
     assert.match(await response.text(), expected);
+  }
+});
+
+test("renders localized home pages with working language and direction semantics", async () => {
+  const russian = await (await render("/ru")).text();
+  assert.match(russian, /Бюджет —/);
+  assert.match(russian, /по-доброму/);
+  assert.match(russian, /^<!DOCTYPE html><html[^>]*lang="ru"[^>]*dir="ltr"/);
+  assert.match(russian, /href="\/he"/);
+  assert.match(russian, /hreflang="he"/i);
+
+  const hebrew = await (await render("/he")).text();
+  assert.match(hebrew, /ניהול תקציב/);
+  assert.match(hebrew, /^<!DOCTYPE html><html[^>]*lang="he"[^>]*dir="rtl"/);
+  assert.match(hebrew, /href="\/ru"/);
+  assert.match(hebrew, /receipt-camera-premium\.webp/);
+});
+
+test("publishes locale-aware canonicals and alternate-language links", async () => {
+  const routes = ["", "privacy", "terms", "support", "delete-account", "404"];
+  const locales = [
+    { locale: "en", prefix: "", dir: null },
+    { locale: "ru", prefix: "/ru", dir: "ltr" },
+    { locale: "he", prefix: "/he", dir: "rtl" },
+  ];
+
+  for (const { locale, prefix, dir } of locales) {
+    for (const route of routes) {
+      const suffix = route ? `/${route}` : "";
+      const path = `${prefix}${suffix}` || "/";
+      const canonicalPath = path === "/" ? "/" : `${path}/`;
+      const html = await (await render(path)).text();
+      assert.match(html, new RegExp(`rel="canonical" href="https://kindbudget\\.ca${canonicalPath}"`));
+      assert.match(html, /hreflang="en"/i);
+      assert.match(html, /hreflang="ru"/i);
+      assert.match(html, /hreflang="he"/i);
+      assert.match(html, /hreflang="x-default"/i);
+      assert.match(html, new RegExp(`^<!DOCTYPE html><html[^>]*lang="${locale}"`));
+      if (dir) assert.match(html, new RegExp(`^<!DOCTYPE html><html[^>]*dir="${dir}"`));
+    }
+  }
+});
+
+test("keeps the current route when switching languages", async () => {
+  for (const route of ["privacy", "terms", "support", "delete-account", "404"]) {
+    const english = await (await render(`/${route}`)).text();
+    assert.ok(english.includes(`href="/${route}"`), `EN ${route} should link to EN peer`);
+    assert.ok(english.includes(`href="/ru/${route}"`), `EN ${route} should link to RU peer`);
+    assert.ok(english.includes(`href="/he/${route}"`), `EN ${route} should link to HE peer`);
+
+    const russian = await (await render(`/ru/${route}`)).text();
+    assert.ok(russian.includes(`href="/${route}"`), `RU ${route} should link to EN peer`);
+    assert.ok(russian.includes(`href="/ru/${route}"`), `RU ${route} should link to RU peer`);
+    assert.ok(russian.includes(`href="/he/${route}"`), `RU ${route} should link to HE peer`);
+
+    const hebrew = await (await render(`/he/${route}`)).text();
+    assert.ok(hebrew.includes(`href="/${route}"`), `HE ${route} should link to EN peer`);
+    assert.ok(hebrew.includes(`href="/ru/${route}"`), `HE ${route} should link to RU peer`);
+    assert.ok(hebrew.includes(`href="/he/${route}"`), `HE ${route} should link to HE peer`);
   }
 });
 
@@ -79,6 +148,22 @@ test("keeps privacy and deletion claims aligned with the current app policy", as
   assert.match(deletion, /Account deletion is permanent/);
   assert.match(deletion, /Firebase Authentication account/);
   assert.match(deletion, /locally stored receipt images/i);
+
+  const russianPrivacy = await (await render("/ru/privacy")).text();
+  assert.match(russianPrivacy, /изображения чеков хранятся локально/i);
+  assert.match(russianPrivacy, /Аналитические данные могут храниться/i);
+  assert.match(russianPrivacy, /правил совместных бюджетов и хранения/i);
+
+  const hebrewPrivacy = await (await render("/he/privacy")).text();
+  assert.match(hebrewPrivacy, /תמונות הקבלות נשמרות מקומית/);
+  assert.match(hebrewPrivacy, /נתוני ניתוח שימוש עשויים להישמר/);
+  assert.match(hebrewPrivacy, /כללי התקציבים המשותפים ושמירת הנתונים/);
+
+  const russianDeletion = await (await render("/ru/delete-account")).text();
+  assert.match(russianDeletion, /на устройстве, на котором вы выполняете удаление/i);
+
+  const hebrewDeletion = await (await render("/he/delete-account")).text();
+  assert.match(hebrewDeletion, /במכשיר שבו הושלמה המחיקה/);
 });
 
 test("ships every product image and responsive accessibility safeguard", async () => {
@@ -113,4 +198,6 @@ test("ships every product image and responsive accessibility safeguard", async (
   assert.match(css, /animation-duration: 0\.01ms/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /grid-template-columns: 1fr/);
+  assert.match(css, /\.locale-root\[dir="rtl"\]/);
+  assert.match(css, /unicode-bidi: isolate/);
 });

@@ -1,85 +1,145 @@
 import Link from "next/link";
+import {
+  defaultLocale,
+  getSiteMessages,
+  localeLabels,
+  locales,
+  localizedPath,
+  type Locale,
+} from "./i18n";
 
-export function Brand({ light = false }: { light?: boolean }) {
+type LocalizedShellProps = {
+  locale?: Locale;
+  currentPath?: string;
+};
+
+export function Brand({
+  light = false,
+  locale = defaultLocale,
+}: {
+  light?: boolean;
+  locale?: Locale;
+}) {
+  const messages = getSiteMessages(locale);
+
   return (
-    <Link className={`brand${light ? " brand--light" : ""}`} href="/" aria-label="KindBudget home">
+    <Link
+      className={`brand${light ? " brand--light" : ""}`}
+      href={localizedPath("/", locale)}
+      aria-label={messages.brandHome}
+    >
       <img src="/brand/app-icon.png" alt="" width="42" height="42" />
-      <span>KindBudget</span>
+      <bdi>KindBudget</bdi>
     </Link>
   );
 }
 
-export function AppStoreBadge({ compact = false }: { compact?: boolean }) {
+export function AppStoreBadge({
+  compact = false,
+  locale = defaultLocale,
+}: {
+  compact?: boolean;
+  locale?: Locale;
+}) {
+  const messages = getSiteMessages(locale);
+
   return (
     <a
       className={`store-badge${compact ? " store-badge--compact" : ""}`}
       href="mailto:support@kindbudget.app?subject=KindBudget%20waitlist"
-      aria-label="Join the KindBudget App Store waitlist"
+      aria-label={messages.appStoreWaitlist}
     >
       <span className="store-badge__apple" aria-hidden="true">●</span>
       <span>
-        <small>Coming soon on the</small>
-        <strong>App Store</strong>
+        <small>{messages.appStoreComingSoon}</small>
+        <strong dir="ltr">App Store</strong>
       </span>
     </a>
   );
 }
 
-export function SiteHeader({ simple = false }: { simple?: boolean }) {
+export function LanguageSwitcher({
+  locale = defaultLocale,
+  currentPath = "/",
+}: LocalizedShellProps) {
+  const messages = getSiteMessages(locale);
+
+  return (
+    <nav className="language-switcher" aria-label={messages.languageSelection}>
+      {locales.map((option) => (
+        <Link
+          key={option}
+          href={localizedPath(currentPath, option)}
+          hrefLang={option}
+          lang={option}
+          aria-current={option === locale ? "page" : undefined}
+        >
+          {localeLabels[option]}
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
+export function SiteHeader({
+  simple = false,
+  locale = defaultLocale,
+  currentPath = "/",
+}: {
+  simple?: boolean;
+} & LocalizedShellProps) {
+  const messages = getSiteMessages(locale);
+
   return (
     <header className="site-header">
       <div className="site-header__inner shell">
-        <Brand />
+        <Brand locale={locale} />
         {!simple && (
-          <nav className="desktop-nav" aria-label="Main navigation">
-            <Link href="/#features">Features</Link>
-            <Link href="/#how-it-works">How it works</Link>
-            <Link href="/#faq">FAQ</Link>
+          <nav className="desktop-nav" aria-label={messages.mainNavigation}>
+            <Link href={localizedPath("/#features", locale)}>{messages.features}</Link>
+            <Link href={localizedPath("/#how-it-works", locale)}>{messages.howItWorks}</Link>
+            <Link href={localizedPath("/#faq", locale)}>{messages.faq}</Link>
           </nav>
         )}
         <div className="header-actions">
-          {!simple && (
-            <div className="language-switcher" aria-label="Language selection">
-              <span aria-current="true">EN</span>
-              <span title="Russian is planned for the next release" aria-disabled="true">RU</span>
-              <span title="Hebrew is planned for the next release" aria-disabled="true">HE</span>
-            </div>
-          )}
-          <AppStoreBadge compact />
+          <LanguageSwitcher locale={locale} currentPath={currentPath} />
+          <AppStoreBadge compact locale={locale} />
         </div>
       </div>
     </header>
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ locale = defaultLocale }: Pick<LocalizedShellProps, "locale"> = {}) {
+  const messages = getSiteMessages(locale);
+
   return (
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div className="footer-intro">
-          <Brand light />
-          <p>Personal and shared budgeting with less pressure and more clarity.</p>
-          <a className="footer-email" href="mailto:support@kindbudget.app">support@kindbudget.app</a>
+          <Brand light locale={locale} />
+          <p>{messages.footerDescription}</p>
+          <a className="footer-email" href="mailto:support@kindbudget.app" dir="ltr">support@kindbudget.app</a>
         </div>
-        <nav className="footer-links" aria-label="Legal and support">
+        <nav className="footer-links" aria-label={messages.legalAndSupport}>
           <div>
-            <strong>Product</strong>
-            <Link href="/#features">Features</Link>
-            <Link href="/#how-it-works">How it works</Link>
-            <Link href="/#faq">FAQ</Link>
+            <strong>{messages.product}</strong>
+            <Link href={localizedPath("/#features", locale)}>{messages.features}</Link>
+            <Link href={localizedPath("/#how-it-works", locale)}>{messages.howItWorks}</Link>
+            <Link href={localizedPath("/#faq", locale)}>{messages.faq}</Link>
           </div>
           <div>
-            <strong>Help & legal</strong>
-            <Link href="/support">Support</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Use</Link>
-            <Link href="/delete-account">Delete Account</Link>
+            <strong>{messages.helpAndLegal}</strong>
+            <Link href={localizedPath("/support", locale)}>{messages.support}</Link>
+            <Link href={localizedPath("/privacy", locale)}>{messages.privacyPolicy}</Link>
+            <Link href={localizedPath("/terms", locale)}>{messages.termsOfUse}</Link>
+            <Link href={localizedPath("/delete-account", locale)}>{messages.deleteAccount}</Link>
           </div>
         </nav>
       </div>
       <div className="shell footer-bottom">
-        <span>© 2026 AP Software. All rights reserved.</span>
-        <span>Made to make money feel lighter.</span>
+        <span>{messages.copyright}</span>
+        <span>{messages.footerNote}</span>
       </div>
     </footer>
   );

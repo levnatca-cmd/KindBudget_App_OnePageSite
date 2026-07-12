@@ -1,31 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
 <loc>https://kindbudget.ca/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/ru/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/he/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/privacy/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/privacy/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/privacy/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/privacy/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/privacy/" />
 <lastmod>2026-07-12T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
-<loc>https://kindbudget.ca/privacy/</loc>
+<loc>https://kindbudget.ca/ru/privacy/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/privacy/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/privacy/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/privacy/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/privacy/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/he/privacy/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/privacy/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/privacy/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/privacy/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/privacy/" />
 <lastmod>2026-07-12T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
 <loc>https://kindbudget.ca/terms/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/terms/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/terms/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/terms/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/terms/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/ru/terms/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/terms/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/terms/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/terms/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/terms/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/he/terms/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/terms/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/terms/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/terms/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/terms/" />
 <lastmod>2026-07-12T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
 <loc>https://kindbudget.ca/support/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/support/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/support/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/support/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/support/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/ru/support/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/support/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/support/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/support/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/support/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/he/support/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/support/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/support/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/support/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/support/" />
 <lastmod>2026-07-12T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>
 </url>
 <url>
 <loc>https://kindbudget.ca/delete-account/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/delete-account/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/delete-account/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/delete-account/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/delete-account/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/ru/delete-account/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/delete-account/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/delete-account/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/delete-account/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/delete-account/" />
+<lastmod>2026-07-12T00:00:00.000Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://kindbudget.ca/he/delete-account/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://kindbudget.ca/delete-account/" />
+<xhtml:link rel="alternate" hreflang="ru" href="https://kindbudget.ca/ru/delete-account/" />
+<xhtml:link rel="alternate" hreflang="he" href="https://kindbudget.ca/he/delete-account/" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://kindbudget.ca/delete-account/" />
 <lastmod>2026-07-12T00:00:00.000Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.6</priority>

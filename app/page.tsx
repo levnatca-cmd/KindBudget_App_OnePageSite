@@ -48,7 +48,7 @@ const gallery = [
   { src: "/screens/day-transactions.webp", label: "Day details", note: "Open any day and see exactly what changed." },
   { src: "/screens/shared-budget.webp", label: "Shared budget", note: "One current view for everyone invited." },
   { src: "/screens/create-budget-form.webp", label: "Create a budget", note: "Set the currency, goal and shape of a new budget in one place." },
-  { src: "/screens/profile.webp", label: "Your profile", note: "Account, locale and privacy controls stay easy to find." },
+  { src: "/screens/profile-user.webp", label: "Your profile", note: "Account, locale and privacy controls stay easy to find." },
 ];
 
 const faqs = [
